@@ -24,7 +24,12 @@ After the model has learned the differences between embedding of similar and dif
 
 ![image](https://user-images.githubusercontent.com/71300410/121767966-40d80880-cb64-11eb-8c77-52abb773900c.png)
 
-From the histogram it looks that the distance that best seperates the data is around 0.6. So the final step is to input faces to the model, if the model outputs distance bigger than the threshold, i will define it to predict "face mismatch", otherwise precit "face match":
+From the histogram it looks that the distance that best seperates the data is around 0.5. For deciding about the best threshold, we need to decide if we care more about correctly predicting similar faces, in that case we will choose treshold that gives high sensetivity, however it will lower the specificity. If we care more about correctly predicted non-similar face, then we will choose treshold that gives high specificity, however it will lower the senitivity.
+The threshold I choose for the project purpose was 0.7.
+
+**Final Step**
+
+So the final step is to input the faces into the model, if the model outputs distance bigger than the threshold, I will define it to predict "face mismatch", otherwise precit "face match":
 
 ![image](https://user-images.githubusercontent.com/71300410/121768216-bbedee80-cb65-11eb-995f-721bf0dba100.png)
 
