@@ -3,7 +3,7 @@ I will first briefly go through the theory and explain the basic implementation.
 
 **Dataset description, and what is the goal?**
 
-I use the Yale face dataset, it consists of 166 face images of 15 different people. The goal is to build model that receive two images of person face, and outputs wheather the face belong to the same person or not.
+I use the Yale face dataset, it consists of 166 face images of 15 different people. The goal is to build model that receives two images of person face, and outputs wheather the face belongs to the same person or not.
 
 **How the model works?**
 
@@ -14,7 +14,7 @@ In the end of the training process, the model will learn to output bigger distan
 
 **Data Preperation**
 
-The dataset contains all the images of the different faces, but the model excpect two images of faces as input, therefor I will create a list of indexes for all the possible pairs of images. The model will get the images of those index pair, and the target for the loss computation will be 1 if the image pair belong to the same person, and 0 otherwise.
+The dataset contains all the images of the different faces, but the model excpect two images of faces as input, therefor I will create a list of indexes for all the possible pairs of images. The model will get the images of those index pair, the target for the loss computation will be 1 if the image pair belong to the same person, and 0 otherwise.
 I will use data genertor and split it into batches, since I don't want to save the images for every combination to the disk, since it won't be efficient and will take too much space.
 
 
